@@ -16,9 +16,15 @@
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
 
-# El código del Apps Script es solo de referencia: no hace falta publicarlo.
+# El código del Apps Script y el README son solo de referencia: no se publican.
 [[redirects]]
   from = "/apps-script/*"
+  to = "/404"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/README.md"
   to = "/404"
   status = 404
   force = true

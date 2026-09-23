@@ -31,6 +31,30 @@
     new IntersectionObserver(function (e) { enrollVisible = e[0].isIntersecting; update(); }).observe(enroll);
   }
 
+  // ---------- Animaciones al scrollear (solo si la persona no pidió reducir movimiento) ----------
+  var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (!reduce && "IntersectionObserver" in window) {
+    var groups = [
+      ".block .eyebrow", ".block h2", ".intro", ".pains li", ".pains__out", ".vs__col",
+      ".who li", ".not-for", ".steps li", ".class", ".note", ".about", ".faq",
+      ".price__row", ".guarantee", ".terms", ".enroll__form"
+    ];
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add("is-in"); io.unobserve(e.target); }
+      });
+    }, { rootMargin: "0px 0px -8% 0px" });
+    groups.forEach(function (sel) {
+      document.querySelectorAll(sel).forEach(function (el, i) {
+        // Solo animamos lo que todavía no está en pantalla, para que nada "parpadee".
+        if (el.getBoundingClientRect().top < window.innerHeight) return;
+        el.classList.add("reveal");
+        el.style.setProperty("--d", Math.min(i, 4) * 0.08 + "s");
+        io.observe(el);
+      });
+    });
+  }
+
   // ---------- Formulario ----------
   var form = document.getElementById("form");
   var done = document.getElementById("done");
