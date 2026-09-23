@@ -419,3 +419,11 @@ q { quotes: "“" "”"; }
   .done:not([hidden]) .done__check { animation: pop .5s .15s cubic-bezier(.2,.7,.2,1) both; }
   .sticky:not([hidden]) { animation: slideup .3s cubic-bezier(.2,.7,.2,1) both; }
 }
+
+/* Quién: números */
+.about__lead { margin-top: 16px; font-size: 1.08rem; color: var(--ink-2); max-width: 36em; }
+.stats { margin-top: 22px; display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1.5px solid var(--ink); border-bottom: 1px solid var(--line); }
+.stats li { padding: 14px 8px 14px 0; display: grid; gap: 4px; align-content: start; }
+.stats li + li { padding-left: 10px; border-left: 1px solid var(--line); }
+.stats strong { font-size: clamp(1.6rem, 7vw, 2.2rem); font-weight: 800; font-stretch: 112%; line-height: 1; color: var(--accent); letter-spacing: -.03em; }
+.stats span { font-size: .8rem; color: var(--ink-2); line-height: 1.3; }

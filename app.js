@@ -36,7 +36,7 @@
   if (!reduce && "IntersectionObserver" in window) {
     var groups = [
       ".block .eyebrow", ".block h2", ".intro", ".pains li", ".pains__out", ".vs__col",
-      ".who li", ".not-for", ".steps li", ".class", ".note", ".about", ".faq",
+      ".who li", ".not-for", ".steps li", ".class", ".note", ".about__copy > *", ".faq",
       ".price__row", ".guarantee", ".terms", ".enroll__form"
     ];
     var io = new IntersectionObserver(function (entries) {
