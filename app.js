@@ -7,7 +7,7 @@
 
   // URL del Apps Script publicado como aplicación web (termina en /exec).
   // No es una clave: es una dirección pública que solo acepta inscripciones válidas.
-  var ENDPOINT = "";
+  var ENDPOINT = "https://script.google.com/macros/s/AKfycbwKV2RB8tpA7HVfgAwNsMmtHGMA7BpsH8YEC3yph--WFm0zzwqf4PYBjQQYJ7WIGz_t2Q/exec";
 
   var WHATSAPP = "5493625176543";
   // La preventa termina el sábado 03/10/2026 a las 23:59 (hora de Argentina).
